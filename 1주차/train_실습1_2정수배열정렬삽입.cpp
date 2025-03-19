@@ -5,7 +5,7 @@
 using namespace std;
 
 const int SIZE = 10;
-//³­¼ö¸¦ 10 ~ 60 »çÀÌ¿¡ »ı¼º
+//ë‚œìˆ˜ë¥¼ 10 ~ 60 ì‚¬ì´ì— ìƒì„±
 void inputData(int data[], int size) {
     srand(time(0));
     for(int i = 0; i<size; i++){
@@ -54,15 +54,15 @@ void maxSort(int data[], int size){
     swap(data,maxindex,size-1);
 }
 /*
- * ³­ÀÌµµ°¡ ¸Å¿ì ³ôÀº ¾Ë°í¸®Áò ±¸Çö
- * Á¤·ÄµÈ ±âÁ¸ ¹è¿­¿¡ ÀÓÀÇ °ªÀ» Ãß°¡ÇÏ´Â ¾Ë°í¸®Áò > »õ ¹è¿­ÀÇ Å©±â´Â ±âÁ¸ ¹è¿­º¸´Ù +1·Î ¸¸µé°í ±âÁ¸ ¹è¿­À» copyÇÒ ¶§
- * »ğÀÔµÈ °ªÀÌ Áß°£¿¡ µé¾î°¡´Â ¾Ë°í¸®Áò ±¸ÇöÇÏ±â
- * O(n) ¾Ë°í¸®ÁòÀ¸·Î ±¸Çö
+ * ë‚œì´ë„ê°€ ë§¤ìš° ë†’ì€ ì•Œê³ ë¦¬ì¦˜ êµ¬í˜„
+ * ì •ë ¬ëœ ê¸°ì¡´ ë°°ì—´ì— ì„ì˜ ê°’ì„ ì¶”ê°€í•˜ëŠ” ì•Œê³ ë¦¬ì¦˜ > ìƒˆ ë°°ì—´ì˜ í¬ê¸°ëŠ” ê¸°ì¡´ ë°°ì—´ë³´ë‹¤ +1ë¡œ ë§Œë“¤ê³  ê¸°ì¡´ ë°°ì—´ì„ copyí•  ë•Œ
+ * ì‚½ì…ëœ ê°’ì´ ì¤‘ê°„ì— ë“¤ì–´ê°€ëŠ” ì•Œê³ ë¦¬ì¦˜ êµ¬í˜„í•˜ê¸°
+ * O(n) ì•Œê³ ë¦¬ì¦˜ìœ¼ë¡œ êµ¬í˜„
  */
 int* insertData(int data[], int size, int value) {
-    int* newData = new int[size + 1];// ÇÔ¼ö Á¾·áÈÄ¿¡µµ ³²¾Æ ÀÖ¾î delete[] ÇÊ¿ä
+    int* newData = new int[size + 1];// ??? ?????ì”…??? ???? ??? delete[] ???
 
-    //À§Ä¡ Ã£±â 
+    //??? ??? 
     int insertIndex=0;
     while(insertIndex < size && data[insertIndex] < value){
         insertIndex++;
@@ -82,24 +82,24 @@ int* insertData(int data[], int size, int value) {
 int main() {
     int data[SIZE];
     inputData(data, SIZE);
-    showData("³­¼ö ÀÔ·Â", data, SIZE);
+    showData("???? ???", data, SIZE);
 
     sortData(data, SIZE);
-    showData("Á¤·ÄÈÄ", data, SIZE);
+    showData("??????", data, SIZE);
 
     reverse(data, SIZE);
-    showData("\n¿ª¼ø Àç¹èÄ¡", data, SIZE);
+    showData("\n???? ????", data, SIZE);
 
     maxSort(data, SIZE);
 
     sortData(data, SIZE);
-    showData("\n Á¤·ÄÈÄ", data, SIZE);
+    showData("\n ??????", data, SIZE);
 
     int realData[] = { 5, 15, 99 };
     for (int newData : realData) {
         int* result = insertData(data, SIZE, newData);
         cout << "\n\n" << newData << " : ";
-        showData("½Ç¼ö »ğÀÔÈÄ", result, SIZE + 1);
+        showData("??? ??????", result, SIZE + 1);
         delete[] result;
     }
     system("pause");
