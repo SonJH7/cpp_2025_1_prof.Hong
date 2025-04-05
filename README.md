@@ -28,8 +28,9 @@ Welcome to our collaborative study repository for Professor 홍봉희’s class.
 - **전동훈**  
   - GitHub: [Jeonsubb](https://github.com/Jeonsubb)  
   - **Study Method**:  
-    - (전동훈님께서 본인의 공부 방법을 아래에 기록해 주세요)  
-    - 예시: “저는 교수님의 강의를 듣고 직접 요약 정리를 한 후, 실습 코드를 재작성하며 문제점을 찾아 개선하고, 추가적인 자료를 통해 보완하는 방식으로 공부합니다.”
+    - 교수님의 강의를 통한 개념 학습
+    - 실습 코드들을 직접 구현하면서 구조를 체득
+    - 동일 기능의 코드들을 여러 방식으로 구현
 
 ---
 
