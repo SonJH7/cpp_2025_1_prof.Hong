@@ -1,0 +1,51 @@
+﻿4장. c언어에 추가된 c++ 요소들
+
+4.1 변수 scope와 표준 입출력
+    polymorphic: 입출력 연산자와 전달되는 parameter에 대하여 호출되는 입출력 연산자 body가 다르다는 의미에서 이용한 용어.
+    polymorphism: 다른 타입의 entity 들에 대하여 단일 interface를 제공하는 것
+
+4.2 const 선언
+    선언과 동시에 초기화, 읽기만 가능하고 쓰기는 허용 x
+    const int MAX = 20;
+    int a[MAX]; (정수 변수는 허용 x)
+
+    상수 포인터 변수:
+         int n;
+        //const int *const t;//오류: 상수 pointer는 항상 초기화해야 한다
+        const int *const q = &n;
+        n++; //n을 통한 변경은 가능하나 *q를 통한 변경은 허용하지 않는다
+        //*q = 5; //오류
+    
+    int *n; //보통 pointer(변수1)
+    int a;
+    int *const m = &a; //상수 pointer(변수2)
+    const int *p; //pointer 값이 상수(변수3)
+    int b;
+    const int *const q = &b;//상수에 대한 상수 pointer(변수4)
+
+4.3 pointer 변수와 reference 변수
+    reference 변수는 기존 변수에 대한 aliasing으로 같은 메모리 공간을 가리킨다.
+    int j = 22;
+    int &k = j;
+    k++; //j 값이 23으로 증가한다.
+    int &m; //error 발생, reference 변수는 항상 초기화해야 함
+    int *const m = &j; //reference 변수 k는 *m과 같은 역할을 한다.
+
+    int n = 55;
+    int *p; //초기화 없어도 사용 가능
+    p = &n;
+    n++; (*p)++; //n의 값이 56, 57이 된다.
+    *p++; //n의 값이 바뀌는 것이 아니다.
+    int &q = n;//reference 변수는 항상 초기화해야 한다.
+    n++; q++; //n의 값이 58, 59가 된다.
+
+4.4 c++ 함수 parameter 전달
+    return by reference를 써야 메모리 효율적임
+4.5 타입 변환
+    implicit cast (cast 연산자 이용 x)
+    ex) int i; char c= i; 
+    
+    explicit casting
+    ex) int sum; double total = (double) sum;
+    
+    C++에서는 const_cast, dynamic_cast, reinterpret_cast, static_cast
